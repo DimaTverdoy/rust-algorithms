@@ -1,4 +1,4 @@
-//! Fibonacci numbers.
+//! Fibonacci numbers
 //!
 //! Fibonacci numbers are a sequence of numbers in which
 //! every 3rd number is equal to the sum of the two previous ones.
@@ -49,7 +49,7 @@ pub fn fibonacci2(n: i32) -> i32 {
 
     let (mut one, mut two, mut three) = (0, 1, 0);
 
-    for _ in 0..n - 1 {
+    for _ in 1..n {
         three = one + two;
         one = two;
         two = three;
