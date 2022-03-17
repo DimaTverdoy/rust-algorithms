@@ -10,7 +10,7 @@
 //! `Fib(n) >= 2^(n/2)` [check_domain](check_domain)
 //!
 //! # Examples
-//! ```
+//! ```rust
 //! use rust_algorithms::fibonacci::fibonacci;
 //!
 //! assert_eq!(fibonacci(5), fibonacci(4) + fibonacci(3));
