@@ -18,7 +18,7 @@
 
 /// Checks if parameter n is in scope
 pub fn check_domain(n: i32) -> bool {
-    (2 as i32).pow((n / 2) as u32) < i32::MAX
+    2_i32.pow((n / 2) as u32) < i32::MAX
 }
 
 /// Recursive finding
@@ -49,7 +49,7 @@ pub fn fibonacci2(n: i32) -> i32 {
 
     let (mut one, mut two, mut three) = (0, 1, 0);
 
-    for i in 0..n - 1 {
+    for _ in 0..n - 1 {
         three = one + two;
         one = two;
         two = three;
