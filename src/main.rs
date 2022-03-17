@@ -1,3 +1,5 @@
+mod fibonacci;
+
 fn main() {
-    println!("Hello, world!");
+    println!("Result is {}", fibonacci::fibonacci2(45));
 }
