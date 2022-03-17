@@ -8,7 +8,7 @@
 //! use sort::count::sort;
 //!
 //! let mut x: [i32; 6] = [6, 2, 4, 1, 8, 2];
-//! sort::count::sort(&mut x);
+//! sort(&mut x);
 //! assert_eq!(x, [1, 2, 2, 4, 6, 8]);
 //! ```
 
@@ -28,7 +28,6 @@ pub fn sort(a: &mut [i32]) {
         b[*i as usize] += 1;
     }
 
-    println!("{:?}", b);
     let mut pointer = 0;
     for i in 0..max_num {
         for _ in 0..b[i as usize] {
