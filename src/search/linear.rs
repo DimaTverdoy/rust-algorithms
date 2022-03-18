@@ -18,9 +18,9 @@
 /// Linear search
 /// # Big O
 /// O(n)
-pub fn search<T: Ord>(a: &mut [T], k: T) -> Option<usize> {
+pub fn search<T: Ord>(a: &[T], k: &T) -> Option<usize> {
     for (i, val) in a.iter().enumerate() {
-        if *val == k {
+        if val == k {
             return Some(i);
         }
     }

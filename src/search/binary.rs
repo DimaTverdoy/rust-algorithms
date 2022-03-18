@@ -27,12 +27,12 @@ use std::cmp::Ordering;
 /// Binary search
 /// # Big O
 /// O(log(n))
-pub fn search<T: Ord>(a: &mut [T], k: T) -> Option<usize> {
+pub fn search<T: Ord>(a: &[T], k: &T) -> Option<usize> {
     let (mut left, mut right) = (0, a.len() - 1);
     let mut mid;
     while left <= right {
         mid = (left + right) / 2;
-        match a[mid].cmp(&k) {
+        match a[mid].cmp(k) {
             Ordering::Less => left = mid + 1,
             Ordering::Equal => return Some(mid),
             Ordering::Greater => right = mid - 1

@@ -1,22 +1,17 @@
 mod fibonacci;
 mod search;
 mod sort;
+mod test;
 
 fn main() {
-    let mut x: [i32; 6] = [6, 2, 4, 1, 8, 2];
+    let mut x = [1, 43, 52, 5];
 
-    println!("Result fibonacci is {}", fibonacci::fibonacci(2));
-    println!("Result fibonacci2 is {}", fibonacci::fibonacci2(6));
+    println!("Fibonacci result is {}", fibonacci::fibonacci(4));
+    println!("Fibonacci result is {}", fibonacci::fibonacci2(4));
 
     sort::count::sort(&mut x);
-    println!("Result count sort is {:?}", x);
+    println!("Count sort result is {:?}", x);
 
-    println!(
-        "Result search linear is {}",
-        search::linear::search(&mut x, 4).unwrap()
-    );
-
-    println!("Result binary searhc is {}",
-        search::binary::search(&mut x, 4).unwrap()
-    );
+    println!("Linear seach result is {}", search::linear::search(&x, &5).unwrap());
+    println!("Binary seach result is {}", search::binary::search(&x, &5).unwrap());
 }
