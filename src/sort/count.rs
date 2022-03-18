@@ -14,7 +14,7 @@
 
 /// Count sort
 /// # Big O
-/// O(n * max(n))
+/// O(n + m) - where m is max(n)
 pub fn sort(a: &mut [i32]) {
     if a.is_empty() {
         return;
@@ -22,7 +22,6 @@ pub fn sort(a: &mut [i32]) {
 
     let max_num = a.iter().max().unwrap() + 1;
     let mut b: Vec<i32> = vec![0; max_num as usize];
-
 
     for i in a.iter() {
         b[*i as usize] += 1;

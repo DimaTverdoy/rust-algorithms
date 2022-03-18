@@ -53,7 +53,7 @@ pub fn fibonacci2(n: i32) -> i32 {
         three = one + two;
         one = two;
         two = three;
-    };
+    }
 
     three
 }
