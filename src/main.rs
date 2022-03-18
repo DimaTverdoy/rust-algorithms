@@ -13,6 +13,10 @@ fn main() {
 
     println!(
         "Result search linear is {}",
-        search::linear::search(&mut x, 8).unwrap()
+        search::linear::search(&mut x, 4).unwrap()
+    );
+
+    println!("Result binary searhc is {}",
+        search::binary::search(&mut x, 4).unwrap()
     );
 }
