@@ -10,9 +10,9 @@
 //! There are 3 variables:
 //! * `left` - The left side of the array border where the searched element can be.
 //!                 Default is length array - 1.
-//!  * `right` - The left side of the array border where the searched element can be.
+//! * `right` - The left side of the array border where the searched element can be.
 //!                 Default is 0.
-//!  * `middle` - The middle of the array which is calculated by the formula: (left + right) / 2
+//! * `middle` - The middle of the array which is calculated by the formula: (left + right) / 2
 //!
 //! Each iteration, get an element from the array at index
 //! middle and compare it with the element we are looking for.
