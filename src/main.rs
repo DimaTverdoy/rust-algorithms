@@ -16,4 +16,5 @@ fn main() {
 
     println!("Linear seach result is {}", search::linear::search(&x, &5).unwrap());
     println!("Binary seach result is {}", search::binary::search(&x, &5).unwrap());
+    println!("Sum seach result is {:?}", search::sum::search(&x, &95).unwrap());
 }
