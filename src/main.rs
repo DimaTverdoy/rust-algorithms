@@ -8,7 +8,7 @@ fn main() {
 
     println!("Fibonacci result is {}", fibonacci::fibonacci(1));
     println!("Fibonacci result is {}", fibonacci::fibonacci2(3));
-    println!("Big fibonacci result is {}", fibonacci::big_fibonacci(4));
+    println!("Big fibonacci result is {}", fibonacci::big_fibonacci(80));
 
     sort::count::sort(&mut x);
     println!("Count sort result is {:?}", x);

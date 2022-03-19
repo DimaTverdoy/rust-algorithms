@@ -29,9 +29,9 @@ mod linear {
     fn base() {
         let x = [32, 14, 0, 794, 9913, 42, 1, 0];
 
-        for (i, value) in x.iter().enumerate() {
-            let index = search(&x, value).unwrap();
-            assert_eq!(&x[index], value)
+        for i in x {
+            let index = search(&x, &i).unwrap();
+            assert_eq!(x[index], i)
         }
     }
 
