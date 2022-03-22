@@ -8,7 +8,7 @@ fn main() {
     let mut x = [1, 43, 52, 5, 0];
 
     println!("Fibonacci result is {}", fibonacci::fibonacci(1));
-    println!("Fibonacci result is {}", fibonacci::fibonacci2(3));
+    println!("Fibonacci result is {}", fibonacci::fibonacci2(20));
     println!("Big fibonacci result is {}", fibonacci::big_fibonacci(80));
 
     let mut x_insert = x.clone();
