@@ -16,10 +16,10 @@
 /// # Big O
 /// O(n^2)
 pub fn sort<T: Ord>(a: &mut [T]) {
-    let mut j = 0;
+    let mut j;
     for i in 1..a.len() {   // No reason to start sorting from element 0
         j = i;
-        while (j > 0 && a[j] < a[j - 1]) {
+        while j > 0 && a[j] < a[j - 1] {
             a.swap(j, j - 1);
             j -= 1;
         }

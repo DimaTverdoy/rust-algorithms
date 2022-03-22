@@ -11,11 +11,11 @@ fn main() {
     println!("Fibonacci result is {}", fibonacci::fibonacci2(20));
     println!("Big fibonacci result is {}", fibonacci::big_fibonacci(80));
 
-    let mut x_insert = x.clone();
+    let mut x_insert = x;
     sort::insert::sort(&mut x_insert);
     println!("Insert sort result is {:?}", x_insert);
 
-    let mut x_count = x.clone();
+    let mut x_count = x;
     sort::count::sort(&mut x_count);
     println!("Count sort result is {:?}", x_count);
 
