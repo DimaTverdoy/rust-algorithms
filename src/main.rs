@@ -5,15 +5,21 @@ mod test;
 
 
 fn main() {
-    let mut x = [1, 43, 52, 5];
+    let mut x = [1, 43, 52, 5, 0];
 
     println!("Fibonacci result is {}", fibonacci::fibonacci(1));
     println!("Fibonacci result is {}", fibonacci::fibonacci2(3));
     println!("Big fibonacci result is {}", fibonacci::big_fibonacci(80));
 
-    sort::count::sort(&mut x);
-    println!("Count sort result is {:?}", x);
+    let mut x_insert = x.clone();
+    sort::insert::sort(&mut x_insert);
+    println!("Insert sort result is {:?}", x_insert);
 
+    let mut x_count = x.clone();
+    sort::count::sort(&mut x_count);
+    println!("Count sort result is {:?}", x_count);
+
+    sort::insert::sort(&mut x);
 
     println!("Linear seach result is {}", search::linear::search(&x, &5).unwrap());
     println!("Binary seach result is {}", search::binary::search(&x, &5).unwrap());
