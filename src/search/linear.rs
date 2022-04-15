@@ -11,8 +11,8 @@
 //!
 //! let mut x: [i32; 6] = [6, 2, 4, 1, 8, 2];
 //!
-//! assert_eq!(Some(1), search::linear::search(&mut x, 2));
-//  assert_eq!(Some(4), search::linear::search(&mut x, 8));
+//! assert_eq!(Some(1), search(&mut x, 2));
+//  assert_eq!(Some(4), search(&mut x, 8));
 //! ```
 
 /// Linear search
