@@ -19,7 +19,11 @@ fn main() {
     sort::count::sort(&mut x_count);
     println!("Count sort result is {:?}", x_count);
 
-    sort::insert::sort(&mut x);
+    let mut x_selection = x;
+    sort::selection::sort(&mut x_selection);
+    println!("Selection sort result is {:?}", x_selection);
+
+    sort::selection::sort(&mut x);
 
     println!("Linear seach result is {}", search::linear::search(&x, &5).unwrap());
     println!("Binary seach result is {}", search::binary::search(&x, &5).unwrap());
