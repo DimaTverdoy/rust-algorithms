@@ -13,7 +13,6 @@
 //! assert_eq!(fibonacci(5), fibonacci(4) + fibonacci(3));
 //! ```
 
-
 /// Recursive finding
 /// # Big O
 /// O(n^2)

@@ -3,7 +3,6 @@ mod search;
 mod sort;
 mod test;
 
-
 fn main() {
     let mut x = [1, 43, 52, 5, 0];
 
@@ -25,8 +24,25 @@ fn main() {
 
     sort::selection::sort(&mut x);
 
-    println!("Linear seach result is {}", search::linear::search(&x, &5).unwrap());
-    println!("Binary seach result is {}", search::binary::search(&x, &5).unwrap());
-    println!("Sum search result is {:?}", search::sum::search(&x, &57).unwrap());
-    println!("Sum search result is {:?}", search::sum::binary_search(&x, &57).unwrap());
+    println!(
+        "Linear search result is {}",
+        search::linear::search(&x, &5).unwrap()
+    );
+    println!(
+        "Binary search result is {}",
+        search::binary::search(&x, &5).unwrap()
+    );
+    println!(
+        "Sum search result is {:?}",
+        search::sum::search(&x, &57).unwrap()
+    );
+    println!(
+        "Sum search result is {:?}",
+        search::sum::binary_search(&x, &57).unwrap()
+    );
+
+    println!(
+        "Substr search result is {:?}",
+        search::substr::search("Hello", "lo").unwrap()
+    );
 }

@@ -36,7 +36,7 @@ pub fn binary_search<T: Ord + Add<Output = T> + Copy>(a: &[T], s: &T) -> Option<
         match (a[left] + a[right]).cmp(s) {
             Ordering::Less => left += 1,
             Ordering::Equal => return Some((left, right)),
-            Ordering::Greater => right -= 1
+            Ordering::Greater => right -= 1,
         }
     }
 

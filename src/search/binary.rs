@@ -35,7 +35,7 @@ pub fn search<T: Ord>(a: &[T], k: &T) -> Option<usize> {
         match a[mid].cmp(k) {
             Ordering::Less => left = mid + 1,
             Ordering::Equal => return Some(mid),
-            Ordering::Greater => right = mid - 1
+            Ordering::Greater => right = mid - 1,
         }
     }
 

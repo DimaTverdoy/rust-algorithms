@@ -14,7 +14,6 @@
 //! assert_eq!(x, [1, 2, 2, 4, 6, 8]);
 //! ```
 
-
 /// Selection sort
 /// # Big O
 /// O(n^2)
