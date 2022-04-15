@@ -44,3 +44,30 @@ mod linear {
         assert_eq!(None, search(&x, &9421));
     }
 }
+
+#[cfg(test)]
+mod substr {
+    use crate::search::substr::search;
+
+    #[test]
+    fn base() {
+        let data = [
+            ("Hello", "llo", 2),
+            ("Test string", "rin", 7),
+            ("From", "F", 0),
+        ];
+
+        for (t, p, result) in data {
+            assert_eq!(search(t, p), Some(result))
+        }
+    }
+
+    #[test]
+    fn none() {
+        let data = [("Hello", "Hlo"), ("Test string", "qew"), ("From", "f")];
+
+        for (t, p) in data {
+            assert_eq!(search(t, p), None)
+        }
+    }
+}
