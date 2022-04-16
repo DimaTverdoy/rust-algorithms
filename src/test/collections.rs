@@ -9,6 +9,10 @@ mod linked_list {
         x.push(4);
         x.push(32);
 
-        println!("{}", x.get(0));
+        assert_eq!(&4, x.get(0));
+        assert_eq!(&32, x.get(1));
+        assert_eq!(Some(0), x.index(4));
+        assert_eq!(None, x.index(63));
+        assert_eq!(2, x.len())
     }
 }

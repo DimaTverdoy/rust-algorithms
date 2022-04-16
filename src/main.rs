@@ -1,3 +1,5 @@
+extern crate core;
+
 mod collections;
 mod fibonacci;
 mod math;

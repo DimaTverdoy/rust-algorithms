@@ -1,8 +1,9 @@
-use std::fmt;
+use std::{fmt, mem};
+use std::borrow::BorrowMut;
 
 pub struct LinkedList<T> {
     head: Option<Node<T>>,
-    length: usize,
+    len: usize,
 }
 
 struct Node<T> {
@@ -10,7 +11,7 @@ struct Node<T> {
     next: Option<Box<Node<T>>>,
 }
 
-impl<T> Node<T> {
+impl<T: std::cmp::PartialEq> Node<T> {
     fn new(item: T) -> Node<T> {
         Self { item, next: None }
     }
@@ -22,6 +23,28 @@ impl<T> Node<T> {
         }
     }
 
+    fn search(&self, item: T, index: &mut usize) -> Option<&Self> {
+        *index += 1;
+
+        if self.item == item {
+            Some(self)
+        } else {
+            match self.next {
+                Some(ref node) => node.search(item, index),
+                None => None
+            }
+        }
+    }
+
+    fn get(&self, index: usize, count: &mut usize) -> &Node<T> {
+        if *count == index {
+            return self
+        }
+        *count += 1;
+
+        return self.next.as_ref().unwrap().get(index, count);
+    }
+
     fn collect<'a>(&'a self, to: &mut Vec<&'a T>) {
         to.push(&self.item);
         if let Some(ref node) = self.next {
@@ -30,11 +53,11 @@ impl<T> Node<T> {
     }
 }
 
-impl<T> LinkedList<T> {
+impl<T: std::cmp::PartialEq> LinkedList<T> {
     pub fn new() -> Self {
         Self {
             head: None,
-            length: 0,
+            len: 0,
         }
     }
 
@@ -43,26 +66,28 @@ impl<T> LinkedList<T> {
             Some(ref mut node) => node.push_last(item),
             None => self.head = Some(Node::new(item)),
         }
-        self.length += 1
+        self.len += 1
     }
 
     pub fn get(&self, index: usize) -> &T {
-        if self.length < index {
+        if self.len - 1 < index {
             panic!(
                 "Index out of bounds: the len is {} but the index is {}",
-                self.length, index
+                self.len, index
             )
         }
 
-        let mut j = self.head.as_ref().unwrap();
+        &self.head.as_ref().unwrap().get(index, 0.borrow_mut()).item
+    }
 
-        for i in 0..index {
-            match j.next {
-                Some(ref node) => j = node,
-                None => panic!("Error get by index {}", index),
-            }
-        }
+    pub fn len(&self) -> usize {
+        self.len
+    }
 
-        &j.item
+    pub fn index(&self, item: T) -> Option<usize> {
+        let mut index = 0;
+        self.head.as_ref()?.search(item, &mut index)?;
+        Some(index - 1)
+
     }
 }
