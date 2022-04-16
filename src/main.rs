@@ -2,6 +2,7 @@ mod fibonacci;
 mod search;
 mod sort;
 mod test;
+mod math;
 
 fn main() {
     let mut x = [1, 43, 52, 5, 0];
