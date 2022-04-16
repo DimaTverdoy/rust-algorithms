@@ -6,7 +6,6 @@
 //! If n is odd, then `a^n = a * (a^(n/2))^2`
 //!
 
-
 /// Fast power
 /// # Big O
 /// O(log(n))
