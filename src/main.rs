@@ -7,10 +7,16 @@ mod math;
 fn main() {
     let mut x = [1, 43, 52, 5, 0];
 
+    // Fibonacci
     println!("Fibonacci result is {}", fibonacci::fibonacci(1));
     println!("Fibonacci result is {}", fibonacci::fibonacci2(20));
     println!("Big fibonacci result is {}", fibonacci::big_fibonacci(80));
 
+    // Math
+    println!("Fast power result is {}", math::power::fast(2, 4));
+    println!("Linear power result is {}", math::power::linear(4, 2));
+
+    // Sort
     let mut x_insert = x;
     sort::insert::sort(&mut x_insert);
     println!("Insert sort result is {:?}", x_insert);
@@ -25,6 +31,7 @@ fn main() {
 
     sort::selection::sort(&mut x);
 
+    // Search
     println!(
         "Linear search result is {}",
         search::linear::search(&x, &5).unwrap()
